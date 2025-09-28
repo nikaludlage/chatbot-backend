@@ -53,5 +53,10 @@ app.post("/chat", async (req, res) => {
   }
 });
 
-// Start de server
-app.listen(3001, () => console.log("✅ Server running on http://localhost:3001"));
+// Gebruik de poort van Render, of 3001 lokaal
+const PORT = process.env.PORT || 3001;
+
+app.listen(PORT, () => {
+  console.log(`✅ Server running on port ${PORT}`);
+});
+
