@@ -19,7 +19,10 @@ if (!OPENAI_API_KEY) {
 }
 
 const app = express();
-app.use(cors());            // Sta frontend requests toe
+// Sta frontend requests toe
+app.use(cors({
+  origin: "*"
+}));
 app.use(bodyParser.json()); // Parse JSON requests
 
 // Chat endpoint
